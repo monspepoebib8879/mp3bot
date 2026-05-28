@@ -193,7 +193,7 @@ def main():
     # Audio va document (fayl sifatida yuborilgan MP3) larni ushlash
     app.add_handler(MessageHandler(filters.AUDIO, handle_audio))
     app.add_handler(MessageHandler(filters.Document.MimeType("audio/mpeg"), handle_audio))
-    app.add_handler(MessageHandler(filters.Document.Extension("mp3"), handle_audio))
+app.add_handler(MessageHandler(filters.Document.FileExtension("mp3"), handle_audio))
 
     # Boshqa xabarlar
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_other))
